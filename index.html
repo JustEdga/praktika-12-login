@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/c7f7387658.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section class="left-column">
+        <header class="top-nav">
+            <a class="left-btn" href="#">Back<i class="fa-solid fa-arrow-left"></i></a>
+            <a class="right-btn" href="#">New traveler</a>
+        </header>
+        <main class="login-form">
+            <h1>Explore travel destinations</h1>
+            <p>The best places for your wild adventures</p>
+            <form action="">
+                <input class="name" type="text" placeholder="Name" required>
+                <input class="country" type="text" placeholder="Country" required>
+                <input class="email" type="email" placeholder="Email" required>
+                <input class="password" type="password" placeholder="Create password" required minlength="8">
+                <button class="signup-btn" type="submit">Sign up</button>
+            </form>
+        </main>
+    </section>
+
+    <section class="right-column">
+
+        <i class="fa-solid fa-quote-left"></i>
+
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <q>Dare to live the life you've always wanted</q>
+            </div>
+            <div class="mySlides">
+                <q>Don't call it a dream - call it a plan</q>
+            </div>
+            <div class="mySlides">
+                <q>Once the Travel bug bites there is no known antidote, and I know that I shall be happily infected until the end of my life.</q>
+            </div>
+            <div class="mySlides">
+                <q>I love places that make you realize how tiny you and your problems are.</q>
+            </div>
+
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+            </div>
+
+        </div>
+
+    </section>
+
+    <script>
+        var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+            }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        }
+        
+    </script>
+
+</body>
+</html>
